@@ -18,12 +18,10 @@ To get started with SignSync, simply follow these steps:
 4. **Learn**: Access the sign language learning section to begin your journey toward learning sign language.
 
 
-For more information on how to contribute, please see our [Contribution Guidelines](CONTRIBUTING.md).
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Thank you for being a part of SignSync! Together, we can create a more inclusive and supportive community for everyone.
+
