@@ -17,14 +17,6 @@ To get started with SignSync, simply follow these steps:
 3. **Engage**: Participate in discussions, share your experiences, and connect with other members of the community.
 4. **Learn**: Access the sign language learning section to begin your journey toward learning sign language.
 
-## Contribute
-
-We welcome contributions from the community to improve and expand SignSync. Whether you're a developer, designer, content creator, or simply someone passionate about accessibility and inclusion, there are many ways to contribute:
-
-- **Code**: Help us enhance existing features, fix bugs, or implement new functionality.
-- **Content**: Contribute stories, articles, or sign language learning materials to enrich our platform's content.
-- **Design**: Provide design suggestions, create visual assets, or help improve the user experience.
-- **Feedback**: Share your thoughts, ideas, and suggestions for how we can make the platform better.
 
 For more information on how to contribute, please see our [Contribution Guidelines](CONTRIBUTING.md).
 
