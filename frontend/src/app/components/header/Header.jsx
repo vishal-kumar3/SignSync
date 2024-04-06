@@ -2,14 +2,9 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='flex justify-around items-center'>
-      <div>Logo...</div>
-      <div>
-        <div>Home</div>
-        <div>About</div>
-        <div>Learn</div>
-      </div>
-      <div>Login/Logout</div>
+    <div className='h-10 sticky top-0 flex justify-around items-center'>
+      <div className='w-[25%]'>Logo...</div>
+      <div className='w-[25%] text-end'>Login/Logout</div>
     </div>
   )
 }

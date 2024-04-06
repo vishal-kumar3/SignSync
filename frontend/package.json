@@ -1,5 +1,5 @@
 {
-  "name": "sign-language",
+  "name": "sign-sync",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@auth0/nextjs-auth0": "^3.5.0",
     "axios": "^1.6.8",
     "mongoose": "^8.2.4",
