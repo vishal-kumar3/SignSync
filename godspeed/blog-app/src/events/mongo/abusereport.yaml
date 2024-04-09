@@ -1,0 +1,98 @@
+# ONE
+http.get./mongo/abusereport/{id}:
+  summary: Fetch AbuseReport
+  description: Fetch AbuseReport from database
+  fn: com.biz.mongo.abusereport.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# CREATE
+http.post./mongo/abusereport:
+  summary: Create a new AbuseReport
+  description: Create AbuseReport from database
+  fn: com.biz.mongo.abusereport.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/AbuseReport'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# UPDATE
+http.put./mongo/abusereport/{id}:
+  summary: Update a AbuseReport
+  description: Update AbuseReport from database
+  fn: com.biz.mongo.abusereport.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/AbuseReport'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# DELETE
+http.delete./mongo/abusereport/{id}:
+  summary: Delete a AbuseReport
+  description: Delete AbuseReport from database
+  fn: com.biz.mongo.abusereport.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# SEARCH
+http.post./mongo/abusereport/search:
+  summary: Fetch multiple AbuseReport
+  description: Fetch multiple AbuseReport from database
+  fn: com.biz.mongo.abusereport.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+  authn: false
+

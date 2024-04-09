@@ -1,0 +1,5 @@
+summary: Fetch many views
+tasks:
+  - id: mongo_views_search
+    fn: datasource.mongo.views.findMany
+    args: {}

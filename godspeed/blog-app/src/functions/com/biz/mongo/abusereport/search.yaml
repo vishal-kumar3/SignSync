@@ -1,0 +1,5 @@
+summary: Fetch many AbuseReport
+tasks:
+  - id: mongo_abusereport_search
+    fn: datasource.mongo.AbuseReport.findMany
+    args: {}

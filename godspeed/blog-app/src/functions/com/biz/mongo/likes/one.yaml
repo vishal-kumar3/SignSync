@@ -1,0 +1,7 @@
+summary: Fetch likes
+tasks:
+  - id: mongo_likes_one
+    fn: datasource.mongo.likes.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

@@ -1,0 +1,7 @@
+summary: Delete likes
+tasks:
+  - id: mongo_likes_delete
+    fn: datasource.mongo.likes.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

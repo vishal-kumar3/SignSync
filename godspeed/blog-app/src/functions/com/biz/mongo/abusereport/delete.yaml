@@ -1,0 +1,7 @@
+summary: Delete AbuseReport
+tasks:
+  - id: mongo_abusereport_delete
+    fn: datasource.mongo.AbuseReport.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

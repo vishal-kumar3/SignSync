@@ -1,0 +1,8 @@
+summary: Update likes
+tasks:
+  - id: mongo_likes_update
+    fn: datasource.mongo.likes.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

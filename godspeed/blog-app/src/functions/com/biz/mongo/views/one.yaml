@@ -1,0 +1,7 @@
+summary: Fetch views
+tasks:
+  - id: mongo_views_one
+    fn: datasource.mongo.views.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

@@ -1,0 +1,98 @@
+# ONE
+http.get./mongo/posts/{id}:
+  summary: Fetch posts
+  description: Fetch posts from database
+  fn: com.biz.mongo.posts.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# CREATE
+http.post./mongo/posts:
+  summary: Create a new posts
+  description: Create posts from database
+  fn: com.biz.mongo.posts.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/posts'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# UPDATE
+http.put./mongo/posts/{id}:
+  summary: Update a posts
+  description: Update posts from database
+  fn: com.biz.mongo.posts.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/posts'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# DELETE
+http.delete./mongo/posts/{id}:
+  summary: Delete a posts
+  description: Delete posts from database
+  fn: com.biz.mongo.posts.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# SEARCH
+http.post./mongo/posts/search:
+  summary: Fetch multiple posts
+  description: Fetch multiple posts from database
+  fn: com.biz.mongo.posts.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+  authn: false
+

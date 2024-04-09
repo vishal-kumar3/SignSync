@@ -1,0 +1,8 @@
+summary: Update users
+tasks:
+  - id: mongo_users_update
+    fn: datasource.mongo.users.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

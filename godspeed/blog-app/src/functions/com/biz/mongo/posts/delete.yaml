@@ -1,0 +1,7 @@
+summary: Delete posts
+tasks:
+  - id: mongo_posts_delete
+    fn: datasource.mongo.posts.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

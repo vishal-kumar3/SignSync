@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.revert-tailwind{
+  all: initial;
+}
+
+.revert-tailwind > * {
+  all: revert;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

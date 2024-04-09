@@ -1,0 +1,99 @@
+# ONE
+http.get./mongo/users/{id}:
+  summary: Fetch users
+  description: Fetch users from database
+  fn: com.biz.mongo.users.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# CREATE
+http.post./mongo/users:
+  summary: Create a new users
+  description: Create users from database
+  fn: com.biz.mongo.users.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/users'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# UPDATE
+http.put./mongo/users/{id}:
+  summary: Update a users
+  description: Update users from database
+  fn: com.biz.mongo.users.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/users'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# DELETE
+http.delete./mongo/users/{id}:
+  summary: Delete a users
+  description: Delete users from database
+  fn: com.biz.mongo.users.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# SEARCH
+http.post./mongo/users/search:
+  summary: Fetch multiple users
+  description: Fetch multiple users from database
+  fn: com.biz.mongo.users.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+  authn: false
+
+

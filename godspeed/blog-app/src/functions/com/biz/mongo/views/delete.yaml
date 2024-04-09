@@ -1,0 +1,7 @@
+summary: Delete views
+tasks:
+  - id: mongo_views_delete
+    fn: datasource.mongo.views.delete
+    args:
+      where:
+        id: <% inputs.params.id %>

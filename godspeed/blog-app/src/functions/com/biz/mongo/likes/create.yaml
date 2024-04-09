@@ -1,0 +1,6 @@
+summary: Create likes
+tasks:
+  - id: mongo_likes_create
+    fn: datasource.mongo.likes.create
+    args:
+      data: <% inputs.body %>

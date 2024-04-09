@@ -1,0 +1,5 @@
+summary: Fetch many likes
+tasks:
+  - id: mongo_likes_search
+    fn: datasource.mongo.likes.findMany
+    args: {}

@@ -1,0 +1,7 @@
+summary: Fetch AbuseReport
+tasks:
+  - id: mongo_abusereport_one
+    fn: datasource.mongo.AbuseReport.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

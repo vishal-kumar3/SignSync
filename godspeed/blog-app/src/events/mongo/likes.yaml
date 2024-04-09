@@ -1,0 +1,98 @@
+# ONE
+http.get./mongo/likes/{id}:
+  summary: Fetch likes
+  description: Fetch likes from database
+  fn: com.biz.mongo.likes.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# CREATE
+http.post./mongo/likes:
+  summary: Create a new likes
+  description: Create likes from database
+  fn: com.biz.mongo.likes.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/likes'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# UPDATE
+http.put./mongo/likes/{id}:
+  summary: Update a likes
+  description: Update likes from database
+  fn: com.biz.mongo.likes.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/likes'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# DELETE
+http.delete./mongo/likes/{id}:
+  summary: Delete a likes
+  description: Delete likes from database
+  fn: com.biz.mongo.likes.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# SEARCH
+http.post./mongo/likes/search:
+  summary: Fetch multiple likes
+  description: Fetch multiple likes from database
+  fn: com.biz.mongo.likes.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+  authn: false
+

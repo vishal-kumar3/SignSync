@@ -1,0 +1,8 @@
+summary: Update posts
+tasks:
+  - id: mongo_posts_update
+    fn: datasource.mongo.posts.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

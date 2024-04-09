@@ -1,0 +1,6 @@
+summary: Create AbuseReport
+tasks:
+  - id: mongo_abusereport_create
+    fn: datasource.mongo.AbuseReport.create
+    args:
+      data: <% inputs.body %>

@@ -1,0 +1,6 @@
+summary: Create views
+tasks:
+  - id: mongo_views_create
+    fn: datasource.mongo.views.create
+    args:
+      data: <% inputs.body %>

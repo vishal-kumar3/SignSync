@@ -1,0 +1,91 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGO_TEST_URL") //Connection string can be found in the .env folder. you can add your own database connection string
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output = "./prisma-clients/mongo"
+}
+
+model users {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt       DateTime          @default(now())
+  email           String            @unique 
+  password        String            /// @encrypted
+  username        String            @unique
+  name            String?
+  role            Role              @default(user)
+  posts           posts[]
+  likes           likes[]
+  views           views[]
+  abuseReport     AbuseReport[]
+  abuseReports    AbuseReport[]      @relation("UserAbuseReports")
+}
+
+
+model posts {
+  id            String       @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  published     Boolean      @default(false)
+  title         String
+  description   String?
+  content       String
+  author        users?        @relation(fields: [authorId], references: [id])
+  authorId      String       @db.ObjectId
+  likes         likes[]
+  noOfLikes    Int          @default(0)
+  views         views[]
+  reportedPosts   AbuseReport[]  @relation("PostAbuseReports")
+  noOfViews    Int          @default(0)
+}
+
+model likes {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime  @default(now())
+  user      users      @relation(fields: [userId], references: [id])
+  userId    String    @db.ObjectId
+  post      posts      @relation(fields: [postId], references: [id])
+  postId    String    @db.ObjectId
+}
+
+model views {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt DateTime  @default(now())
+  user      users      @relation(fields: [userId], references: [id])
+  userId    String    @db.ObjectId
+  post      posts      @relation(fields: [postId], references: [id])
+  postId    String    @db.ObjectId
+}
+
+enum Role {
+  user
+  admin
+  // Add other roles as needed
+}
+
+model AbuseReport {
+  id               String      @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt        DateTime    @default(now())
+  reporter         users        @relation(fields: [reporterId], references: [id])
+  reporterId       String      @db.ObjectId
+  reportedUser     users?       @relation("UserAbuseReports", fields: [reportedUserId], references: [id])
+  reportedUserId   String      @db.ObjectId
+  reportedPost     posts?       @relation("PostAbuseReports", fields: [reportedPostId], references: [id])
+  reportedPostId   String      @db.ObjectId
+  reportType       ReportType
+  description      String?
+  status           ReportStatus @default(PENDING)
+}
+
+enum ReportStatus {
+  PENDING
+  RESOLVED
+  REJECTED
+}
+
+enum ReportType {
+  USER
+  POST
+}

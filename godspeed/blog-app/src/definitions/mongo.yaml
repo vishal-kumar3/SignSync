@@ -1,0 +1,96 @@
+users:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    email:
+      type: string
+    password:
+      type: string
+      description: '@encrypted'
+    username:
+      type: string
+    name:
+      type: string
+      nullable: true
+    role:
+      type: string
+      default: user
+      enum:
+        - user
+        - admin
+posts:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    updatedAt:
+      type: string
+      format: date-time
+    published:
+      type: boolean
+      default: false
+    title:
+      type: string
+    description:
+      type: string
+      nullable: true
+    content:
+      type: string
+    authorId:
+      type: string
+    noOfLikes:
+      type: integer
+      default: 0
+    noOfViews:
+      type: integer
+      default: 0
+likes:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    userId:
+      type: string
+    postId:
+      type: string
+views:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    userId:
+      type: string
+    postId:
+      type: string
+AbuseReport:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date-time
+    reporterId:
+      type: string
+    reportedUserId:
+      type: string
+    reportedPostId:
+      type: string
+    reportType:
+      type: string
+      enum:
+        - USER
+        - POST
+    description:
+      type: string
+      nullable: true
+    status:
+      type: string
+      default: PENDING
+      enum:
+        - PENDING
+        - RESOLVED
+        - REJECTED

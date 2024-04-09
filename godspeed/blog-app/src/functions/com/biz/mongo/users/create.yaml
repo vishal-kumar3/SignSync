@@ -1,0 +1,6 @@
+summary: Create users
+tasks:
+  - id: mongo_users_create
+    fn: datasource.mongo.users.create
+    args:
+      data: <% inputs.body %>

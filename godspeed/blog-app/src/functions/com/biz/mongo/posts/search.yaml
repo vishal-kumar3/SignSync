@@ -1,0 +1,5 @@
+summary: Fetch many posts
+tasks:
+  - id: mongo_posts_search
+    fn: datasource.mongo.posts.findMany
+    args: {}

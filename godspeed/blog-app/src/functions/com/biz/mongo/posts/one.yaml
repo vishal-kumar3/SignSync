@@ -1,0 +1,7 @@
+summary: Fetch posts
+tasks:
+  - id: mongo_posts_one
+    fn: datasource.mongo.posts.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

@@ -1,0 +1,8 @@
+summary: Update AbuseReport
+tasks:
+  - id: mongo_abusereport_update
+    fn: datasource.mongo.AbuseReport.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>

@@ -1,0 +1,7 @@
+summary: Fetch users
+tasks:
+  - id: mongo_users_one
+    fn: datasource.mongo.users.findUnique
+    args:
+      where:
+        id: <% inputs.params.id %>

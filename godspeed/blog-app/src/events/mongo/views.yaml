@@ -1,0 +1,98 @@
+# ONE
+http.get./mongo/views/{id}:
+  summary: Fetch views
+  description: Fetch views from database
+  fn: com.biz.mongo.views.one
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# CREATE
+http.post./mongo/views:
+  summary: Create a new views
+  description: Create views from database
+  fn: com.biz.mongo.views.create
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/views'
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# UPDATE
+http.put./mongo/views/{id}:
+  summary: Update a views
+  description: Update views from database
+  fn: com.biz.mongo.views.update
+  body:
+    content:
+      application/json:
+        schema:
+          $ref: '#/definitions/mongo/views'
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# DELETE
+http.delete./mongo/views/{id}:
+  summary: Delete a views
+  description: Delete views from database
+  fn: com.biz.mongo.views.delete
+  params:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '202':
+      content:
+        application/json:
+          schema:
+            type: object
+  authn: false
+
+# SEARCH
+http.post./mongo/views/search:
+  summary: Fetch multiple views
+  description: Fetch multiple views from database
+  fn: com.biz.mongo.views.search
+  body:
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+  authn: false
+

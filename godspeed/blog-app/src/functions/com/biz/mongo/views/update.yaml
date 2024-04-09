@@ -1,0 +1,8 @@
+summary: Update views
+tasks:
+  - id: mongo_views_update
+    fn: datasource.mongo.views.update
+    args:
+      where:
+        id: <% inputs.params.id %>
+      data: <% inputs.body %>
