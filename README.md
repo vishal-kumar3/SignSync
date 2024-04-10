@@ -18,9 +18,6 @@ To get started with SignSync, simply follow these steps:
 4. **Learn**: Access the sign language learning section to begin your journey toward learning sign language.
 
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
