@@ -1,6 +1,6 @@
 # SignSync: Bridging the Gap for Hearing and Speech Impaired Individuals
 
-Welcome to SignSync! Our project aims at bridging the community gap within hearing and speech impaired people. SignSync creates an inclusive and supportive community where individuals who are deaf and mute can come together to share their stories, challenges, and triumphs. Whether you're looking to connect with others who understand your experiences or you're interested in learning sign language, this platform offers a welcoming environment for all.
+Welcome to SignSync! Our project aims at bridging the community gap within hearing and speech impaired people. SignSync creates an inclusive and supportive community where individuals who are deaf and mute can come together to share their stories, challenges, and triumphs. Whether you're looking to connect with others who understand your experiences or you're interested in learning sign language, this platform offers a welcoming environment for all. A special feature of this website is the video calling feature, that generates text from sign language 
 
 ## Features
 
